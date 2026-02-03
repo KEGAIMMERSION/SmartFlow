@@ -1,0 +1,288 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.timeControls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    padding: 1.5rem;
+}
+
+.statHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.statHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.chartContainer {
+    margin-bottom: 1rem;
+}
+
+.barChart {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    height: 200px;
+    padding: 1rem 0;
+}
+
+.bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.barFill {
+    background-color: var(--color-primary);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s ease;
+    min-height: 10px;
+}
+
+.barFill:hover {
+    opacity: 0.8;
+}
+
+.statFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.statChange {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.habitsChart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.habitBar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.habitInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.habitName {
+    font-size: 0.875rem;
+    color: var(--color-text);
+}
+
+.habitPercent {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.habitProgress {
+    height: 8px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.habitProgressFill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    padding: 1.5rem;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.trendsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.trendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.trendUp {
+    color: var(--color-secondary);
+}
+
+.timeDistribution {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.distributionItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.distributionColor {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.aiCard {
+    padding: 1.5rem;
+}
+
+.aiHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.aiHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.aiContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aiRecommendation {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.aiBullet {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+}
+
+.aiRecommendation p {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.aiFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.aiUpdate {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .barChart {
+        height: 150px;
+    }
+}

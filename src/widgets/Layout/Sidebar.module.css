@@ -1,0 +1,72 @@
+.sidebar {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    border-right: 1px solid var(--color-border);
+}
+
+.logo {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.logoText {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.navLink:hover {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
+.navLink.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.footer {
+    padding: 1rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.themeButton {
+    width: 100%;
+}
+
+.logoutButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.logoutButton:hover {
+    background-color: var(--color-bg-secondary);
+}
