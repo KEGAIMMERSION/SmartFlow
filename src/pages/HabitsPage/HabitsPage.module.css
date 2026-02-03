@@ -1,0 +1,149 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.stats {
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    max-width: 300px;
+    padding: 1.5rem;
+}
+
+.statContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.statNumber {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.statLabel {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.addCard {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.addForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input {
+    width: 100%;
+}
+
+.addButton {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.habitsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.habitCard {
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.habitCard:hover {
+    transform: translateY(-2px);
+}
+
+.habitHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.habitTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.habitDescription {
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.habitFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.streak {
+    color: var(--color-text);
+    font-size: 0.875rem;
+}
+
+.streak strong {
+    color: var(--color-primary);
+}
+
+.frequency {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .habitsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .habitHeader {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+}

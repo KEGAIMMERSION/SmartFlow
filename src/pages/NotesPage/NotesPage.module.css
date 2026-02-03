@@ -1,0 +1,170 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search {
+    position: relative;
+    max-width: 400px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+    z-index: 1;
+}
+
+.searchInput input {
+    padding-left: 2.5rem;
+}
+
+.categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.editorCard {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.editorHeader {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.titleInput {
+    flex: 1;
+}
+
+.categorySelect {
+    width: 200px;
+}
+
+.contentTextarea {
+    margin-bottom: 1rem;
+}
+
+.editorActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.noteCard {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.noteCard:hover {
+    transform: translateY(-2px);
+}
+
+.noteHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.noteCategory {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.noteActions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.noteTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 0.75rem 0;
+}
+
+.noteContent {
+    flex: 1;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.noteFooter {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.noteDate {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .editorHeader {
+        flex-direction: column;
+    }
+
+    .categorySelect {
+        width: 100%;
+    }
+
+    .notesGrid {
+        grid-template-columns: 1fr;
+    }
+}
