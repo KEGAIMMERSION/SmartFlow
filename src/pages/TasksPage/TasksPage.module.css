@@ -199,6 +199,116 @@
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
+.prioritySelect {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.prioritySelect label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.priorityOptions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.priorityOption {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 2px solid;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.priorityOption:hover {
+    transform: translateY(-1px);
+}
+
+.priorityOption.selected {
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+.priorityDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.priorityContainer {
+    position: relative;
+}
+
+.priorityDisplay {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: 1px solid;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.priorityDisplay:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.priorityEditor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+    min-width: 120px;
+}
+
+.priorityEditorOption {
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    cursor: pointer;
+    font-size: 0.75rem;
+    text-align: center;
+    transition: opacity 0.2s ease;
+}
+
+.priorityEditorOption:hover {
+    opacity: 0.9;
+}
+
+.cancelEdit {
+    margin-top: 0.25rem;
+    padding: 0.25rem;
+    background: var(--color-bg-secondary);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
 @media (max-width: 768px) {
     .taskHeader {
         flex-direction: column;
