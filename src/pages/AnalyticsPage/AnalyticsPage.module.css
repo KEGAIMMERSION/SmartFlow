@@ -1,5 +1,5 @@
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 1rem;
 }
@@ -29,25 +29,25 @@
     margin-bottom: 2rem;
 }
 
-.statsGrid {
+.chartsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.statCard {
+.chartCard {
     padding: 1.5rem;
 }
 
-.statHeader {
+.chartHeader {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-.statHeader h3 {
+.chartHeader h3 {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text);
@@ -55,62 +55,29 @@
 }
 
 .chartContainer {
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 320px;
 }
 
-.barChart {
-    display: flex;
-    align-items: flex-end;
-    gap: 0.5rem;
-    height: 200px;
-    padding: 1rem 0;
+.customTooltip {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    box-shadow: var(--shadow-md);
 }
 
-.bar {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-}
-
-.barFill {
-    background-color: var(--color-primary);
-    border-radius: 4px 4px 0 0;
-    transition: height 0.3s ease;
-    min-height: 10px;
-}
-
-.barFill:hover {
-    opacity: 0.8;
-}
-
-.statFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-.statValue {
-    font-size: 1.5rem;
-    font-weight: bold;
+.tooltipLabel {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
     color: var(--color-text);
 }
 
-.statChange {
-    padding: 0.25rem 0.5rem;
-    background-color: var(--color-secondary);
-    color: white;
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.habitsChart {
+.habitsProgress {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .habitBar {
@@ -133,6 +100,7 @@
 .habitPercent {
     font-weight: 600;
     color: var(--color-text);
+    font-size: 0.875rem;
 }
 
 .habitProgress {
@@ -148,67 +116,9 @@
     transition: width 0.3s ease;
 }
 
-.contentGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.card {
-    padding: 1.5rem;
-}
-
-.cardHeader {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.cardHeader h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin: 0;
-}
-
-.trendsList {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.trendItem {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.trendUp {
-    color: var(--color-secondary);
-}
-
-.timeDistribution {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.distributionItem {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.distributionColor {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-}
-
 .aiCard {
     padding: 1.5rem;
+    margin-top: 2rem;
 }
 
 .aiHeader {
@@ -234,6 +144,7 @@
 .aiRecommendation {
     display: flex;
     gap: 0.75rem;
+    align-items: flex-start;
 }
 
 .aiBullet {
@@ -265,6 +176,12 @@
     color: var(--color-text-secondary);
 }
 
+@media (max-width: 1200px) {
+    .chartsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -272,17 +189,13 @@
         gap: 1rem;
     }
 
-    .statsGrid {
-        grid-template-columns: 1fr;
+    .chartContainer {
+        height: 250px;
     }
 
-    .contentGrid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .barChart {
-        height: 150px;
+    .aiFooter {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
     }
 }

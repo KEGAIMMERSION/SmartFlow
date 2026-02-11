@@ -10,6 +10,8 @@ import {
     LogOut
 } from 'lucide-react'
 import { useTheme } from '../../shared/ui/ThemeProvider/ThemeProvider'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { logout } from '../../features/auth/authSlice'
 import { Button } from '../../shared/ui/Button/Button'
 import styles from './Sidebar.module.css'
 
@@ -24,11 +26,26 @@ const navItems = [
 
 export const Sidebar: React.FC = () => {
     const { toggleTheme } = useTheme()
+    const dispatch = useAppDispatch()
+    const { user } = useAppSelector(state => state.auth)
+
+    const handleLogout = async () => {
+        await dispatch(logout())
+        window.location.href = '/auth'
+    }
 
     return (
         <aside className={styles.sidebar}>
             <div className={styles.logo}>
                 <span className={styles.logoText}>SmartFlow</span>
+                {user && (
+                    <div className={styles.userBadge}>
+                        <span className={styles.userName}>{user.name}</span>
+                        <span className={`${styles.userPlan} ${styles[user.subscription]}`}>
+              {user.subscription === 'free' ? 'Бесплатный' : user.subscription === 'pro' ? 'Pro' : 'Premium'}
+            </span>
+                    </div>
+                )}
             </div>
 
             <nav className={styles.nav}>
@@ -47,14 +64,22 @@ export const Sidebar: React.FC = () => {
             </nav>
 
             <div className={styles.footer}>
-                <Button variant="outline" onClick={toggleTheme} className={styles.themeButton}>
+                <Button
+                    variant="outline"
+                    onClick={toggleTheme}
+                    className={styles.themeButton}
+                >
                     Сменить тему
                 </Button>
 
-                <button className={styles.logoutButton}>
+                <Button
+                    variant="ghost"
+                    onClick={handleLogout}
+                    className={styles.logoutButton}
+                >
                     <LogOut size={20} />
                     <span>Выйти</span>
-                </button>
+                </Button>
             </div>
         </aside>
     )
