@@ -11,9 +11,35 @@ import {
     Globe,
     Download,
     Moon,
-    Sun
+    Sun,
+    Star,
+    Crown,
+    Check,
 } from 'lucide-react'
 import styles from './SettingsPage.module.css'
+
+const subscriptionPlans = [
+    {
+        id: 'free',
+        name: 'Бесплатный',
+        price: '0₽',
+        features: ['5 привычек', '10 задач', 'Базовая аналитика'],
+        current: true,
+    },
+    {
+        id: 'pro',
+        name: 'Pro',
+        price: '299₽/мес',
+        features: ['Неограниченные привычки', 'Неограниченные задачи', 'Расширенная аналитика', 'AI рекомендации'],
+        recommended: true,
+    },
+    {
+        id: 'premium',
+        name: 'Premium',
+        price: '599₽/мес',
+        features: ['Все из Pro', 'Приоритетная поддержка', 'Кастомные отчеты', 'Экспорт данных'],
+    },
+]
 
 const SettingsPage: React.FC = () => {
     const { theme, toggleTheme } = useTheme()
@@ -26,8 +52,18 @@ const SettingsPage: React.FC = () => {
         timezone: 'Europe/Moscow',
     })
 
+    const [activeSubscriptions, setActiveSubscriptions] = useState(['free'])
+
     const handleChange = (field: string, value: any) => {
         setSettings(prev => ({ ...prev, [field]: value }))
+    }
+
+    const handleSubscribe = (planId: string) => {
+        if(planId === 'free') {
+            setActiveSubscriptions(['free'])
+        } else {
+            setActiveSubscriptions([planId])
+        }
     }
 
     const exportData = () => {
@@ -78,6 +114,52 @@ const SettingsPage: React.FC = () => {
                         <div className={styles.settingActions}>
                             <Button variant="primary">Сохранить изменения</Button>
                         </div>
+                    </div>
+                </Card>
+
+                <Card className={styles.settingCard}>
+                    <div className={styles.settingHeader}>
+                        <Crown size={20} />
+                        <h3>Подписки</h3>
+                    </div>
+
+                    <div className={styles.subscriptions}>
+                        {subscriptionPlans.map(plan => (
+                            <div
+                                key={plan.id}
+                                className={`${styles.subscriptionCard} ${activeSubscriptions.includes(plan.id) ? styles.active : ''} ${plan.recommended ? styles.recommended : ''}`}
+                            >
+                                {plan.recommended && (
+                                    <div className={styles.recommendedBadge}>
+                                        <Star size={12} />
+                                        Рекомендуем
+                                    </div>
+                                )}
+
+                                <div className={styles.subscriptionHeader}>
+                                    <h4 className={styles.subscriptionName}>{plan.name}</h4>
+                                    <div className={styles.subscriptionPrice}>{plan.price}</div>
+                                </div>
+
+                                <ul className={styles.subscriptionFeatures}>
+                                    {plan.features.map((feature, index) => (
+                                        <li key={index}>
+                                            <Check size={16} />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <Button
+                                    variant={activeSubscriptions.includes(plan.id) ? 'primary' : 'outline'}
+                                    onClick={() => handleSubscribe(plan.id)}
+                                    disabled={activeSubscriptions.includes(plan.id)}
+                                    className={styles.subscribeButton}
+                                >
+                                    {activeSubscriptions.includes(plan.id) ? 'Активна' : 'Выбрать'}
+                                </Button>
+                            </div>
+                        ))}
                     </div>
                 </Card>
 

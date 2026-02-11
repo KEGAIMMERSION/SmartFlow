@@ -1,22 +1,20 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Search } from 'lucide-react'
-import { Input } from '../../shared/ui/Input/Input'
-import {Notifications} from "../../features/notifications/Notifications.tsx";
+import { Notifications } from '../../features/notifications/Notifications'
 import styles from './Header.module.css'
 
 export const Header: React.FC = () => {
-    const [search, setSearch] = useState('')
-
     return (
         <header className={styles.header}>
-            <div className={styles.search}>
-                <Input
-                    placeholder="Поиск задач, заметок..."
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    icon={<Search size={20} />}
-                    className={styles.searchInput}
-                />
+            <div className={styles.searchContainer}>
+                <div className={styles.searchWrapper}>
+                    <Search size={18} className={styles.searchIcon} />
+                    <input
+                        type="text"
+                        placeholder="Поиск задач, заметок, привычек..."
+                        className={styles.searchInput}
+                    />
+                </div>
             </div>
 
             <div className={styles.actions}>

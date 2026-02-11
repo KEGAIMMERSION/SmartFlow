@@ -70,3 +70,41 @@
 .logoutButton:hover {
     background-color: var(--color-bg-secondary);
 }
+
+.userBadge {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.userName {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.userPlan {
+    display: inline-block;
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.userPlan.free {
+    background-color: var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.userPlan.pro {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3B82F6;
+}
+
+.userPlan.premium {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+}
